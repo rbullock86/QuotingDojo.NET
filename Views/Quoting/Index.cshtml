@@ -1,0 +1,33 @@
+@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quoting Dojo</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to QuotingDojo</h1>
+        @model Quote
+        <form asp-action="NewQuote" method="POST">
+            <span style="color: red;" asp-validation-for="Name"></span>
+            <br>
+            <span style="color: red;" asp-validation-for="QuoteData"></span>
+            <div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name">
+            </div>
+            <div>
+                <label asp-for="QuoteData"></label>
+                <textarea asp-for="QuoteData" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <button type="submit">Submit Quote</button>
+            </div>
+        </form>
+            <a href="Quotes"><button>Go Straight to Quotes</button></a>
+    </div>
+</body>
+</html>
